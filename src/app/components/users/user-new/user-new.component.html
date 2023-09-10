@@ -1,1 +1,70 @@
-<p>user-new works!</p>
+<h3 class="h4">
+  {{ !!this.userId ? 'Edit User' : 'Add New User' }}
+</h3>
+<hr class="mb-5" />
+
+<form [formGroup]="userForm" (ngSubmit)="submitUserForm()">
+
+  <!-- first name control -->
+  <div class="form-group mb-3">
+    <label for="firstName" class="form-label">First Name:</label>
+    <input
+      id="firstName"
+      class="form-control"
+      type="text"
+      formControlName="firstName"
+    />
+  </div>
+
+  <!-- last name control -->
+  <div class="form-group mb-3">
+    <label for="lastName" class="form-label">Last Name:</label>
+    <input
+      id="lastName"
+      class="form-control"
+      type="text"
+      formControlName="lastName"
+    />
+  </div>
+
+  <!-- email control -->
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">Email address:</label>
+    <input
+      id="email"
+      class="form-control"
+      type="email"
+      formControlName="email"
+    />
+  </div>
+
+  <!-- actions buttons -->
+  <div class="d-flex gap-2">
+
+    <!-- submit button -->
+    <button
+      class="btn btn-primary px-4"
+      type="submit"
+    >
+      Submit
+    </button>
+
+    <!-- reset button -->
+    <button
+      *ngIf="!!!this.userId"
+      class="btn btn-danger px-4"
+      type="button"
+      (click)="clearUserForm()"
+    >
+      Reset
+    </button>
+
+    <!-- cancel button -->
+    <a
+      class="btn btn-secondary px-4"
+      routerLink="/users"
+    >
+      Cancel
+    </a>
+  </div>
+</form>
