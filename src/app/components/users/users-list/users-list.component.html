@@ -1,11 +1,28 @@
-<div class="row">
-  <div class="card col-md-4">
-    <img src="..." class="card-img-top" alt="...">
+<!-- page header -->
+<div class="page-header py-2 mb-4 shadow-sm">
+  <div class="d-flex align-items-center justify-content-between gap-3">
+    <h3 class="h4 mb-0">
+      Users
+      <span class="text-secondary fw-normal fs-5">({{ usersLimit }})</span>
+    </h3>
 
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary w-100">Go somewhere</a>
-    </div>
+    <a class="btn btn-primary" routerLink="/users/new">Add New User</a>
   </div>
+</div>
+
+<!-- page content -->
+<div class="row" *ngIf="users.length > 0 && !isFetching">
+  <div class="col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let user of users">
+    <app-user-card [user]="user"></app-user-card>
+  </div>
+</div>
+
+<!-- no data msg -->
+<div class="alert alert-secondary" *ngIf="isFetching">
+  Fetching users, please wait a moment while we gather the latest information for you. 🕒✨
+</div>
+
+<!-- error msg -->
+<div class="alert alert-danger" *ngIf="isError">
+  Oops! It seems we've encountered an issue while fetching users. Please check your internet connection and try again later. 🚧🛠️
 </div>

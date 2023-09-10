@@ -10,14 +10,24 @@ export class SidebarComponent {
 
   menuItems = [
     {
-      name: 'Home',
+      name: 'Users List',
+      route: 'users',
+      exact: false,
+    },
+    {
+      name: 'List Item',
       route: '',
       exact: true,
     },
     {
-      name: 'Users List',
-      route: 'users',
-      exact: false,
-    }
+      name: 'List Item',
+      route: '',
+      exact: true,
+    },
+    {
+      name: 'List Item',
+      route: '',
+      exact: true,
+    },
   ];
 }
