@@ -36,6 +36,8 @@ export class UserNewComponent implements OnInit {
       firstName: this.fb.control(null, Validators.required),
       lastName: this.fb.control(null, Validators.required),
       email: this.fb.control(null, [Validators.required, Validators.email]),
+      age: this.fb.control(null, Validators.required),
+      gender: this.fb.control('male', Validators.required),
     });
   }
 
@@ -50,6 +52,8 @@ export class UserNewComponent implements OnInit {
               firstName: res.firstName,
               lastName: res.lastName,
               email: res.email,
+              age: res.age,
+              gender: res.gender,
             });
           },
           error: (err) => {

@@ -2,8 +2,22 @@
   <img class="card-img-top" [src]="user?.image" [alt]="user?.username">
 
   <div class="card-body d-flex flex-column border-top">
-    <h5 class="card-title">{{ user?.firstName }} {{ user?.lastName }}</h5>
-    <p class="card-text">Email: {{ user?.email }}</p>
+    <h5 class="card-title mb-3">{{ user?.firstName }} {{ user?.lastName }}</h5>
+
+    <ul>
+      <li>
+        <strong class="fw-semibold">Email:</strong>
+        {{ user?.email }}
+      </li>
+      <li>
+        <strong class="fw-semibold">Age:</strong>
+        {{ user?.age }}
+      </li>
+      <li>
+        <strong class="fw-semibold">Gender:</strong>
+        {{ user?.gender }}
+      </li>
+    </ul>
 
     <a
       class="btn btn-primary w-100 mt-auto"
