@@ -18,6 +18,11 @@
 </div>
 
 <!-- no data msg -->
+<div class="alert alert-secondary" *ngIf="users.length == 0 && !isFetching">
+  We're sorry, but it looks like there's no data to display right now. 🕒🔍
+</div>
+
+<!-- loading msg -->
 <div class="alert alert-secondary" *ngIf="isFetching">
   Fetching users, please wait a moment while we gather the latest information for you. 🕒✨
 </div>

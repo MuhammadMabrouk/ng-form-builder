@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { FetchUsersResponse, User } from './user';
 
 @Injectable({
@@ -11,7 +11,14 @@ export class UsersService {
 
   // fetch all users
   fetchUsers() {
-    return this.http.get<FetchUsersResponse>('https://dummyjson.com/users');
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('limit', 12);
+    // queryParams = queryParams.append('skip', 1);
+
+    return this.http.get<FetchUsersResponse>(
+      'https://dummyjson.com/users',
+      { params: queryParams }
+    );
   }
 
   // fetch single user
