@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { UsersListComponent } from './components/users/users-list/users-list.component';
-import { UserNewComponent } from './components/users/user-new/user-new.component';
+import { UsersListComponent } from './modules/users/pages/users-list/users-list.component';
+import { UserNewComponent } from './modules/users/pages/user-new/user-new.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },

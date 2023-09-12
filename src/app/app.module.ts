@@ -7,16 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
-import { HomeComponent } from './components/home/home.component';
-import { UsersListComponent } from './components/users/users-list/users-list.component';
-import { UserCardComponent } from './components/users/user-card/user-card.component';
-import { UserNewComponent } from './components/users/user-new/user-new.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { UsersListComponent } from './modules/users/pages/users-list/users-list.component';
+import { UserCardComponent } from './modules/users/components/user-card/user-card.component';
+import { UserNewComponent } from './modules/users/pages/user-new/user-new.component';
 
 const components = [
   AppComponent,
   SidebarComponent,
-  HomeComponent,
   UsersListComponent,
   UserCardComponent,
   UserNewComponent,
