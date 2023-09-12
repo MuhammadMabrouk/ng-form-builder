@@ -18,7 +18,7 @@
 </div>
 
 <!-- no data msg -->
-<div class="alert alert-secondary" *ngIf="users.length == 0 && !isFetching">
+<div class="alert alert-secondary" *ngIf="users.length == 0 && !isFetching && !isError">
   We're sorry, but it looks like there's no data to display right now. 🕒🔍
 </div>
 
