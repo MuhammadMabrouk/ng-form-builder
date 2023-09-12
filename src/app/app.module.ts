@@ -4,21 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormBuilderModule } from './modules/form-builder/form-builder.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// components
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { UsersListComponent } from './modules/users/pages/users-list/users-list.component';
-import { UserCardComponent } from './modules/users/components/user-card/user-card.component';
-import { UserNewComponent } from './modules/users/pages/user-new/user-new.component';
 
 const components = [
   AppComponent,
   SidebarComponent,
-  UsersListComponent,
-  UserCardComponent,
-  UserNewComponent,
 ];
 
 const modules = [
@@ -26,7 +20,6 @@ const modules = [
   ReactiveFormsModule,
   HttpClientModule,
   AppRoutingModule,
-  FormBuilderModule,
   NgbModule,
 ];
 

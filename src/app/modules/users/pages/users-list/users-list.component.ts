@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { UsersService } from '../../users.service';
-import { User } from '../../user';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-users-list',
