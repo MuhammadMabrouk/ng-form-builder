@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { FormControlService } from 'src/app/modules/form-builder/services/form-control.service';
 import { ControlBase } from 'src/app/modules/form-builder/models/control-base.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-new',
   templateUrl: './user-new.component.html',
   styleUrls: ['./user-new.component.scss']
 })
-export class UserNewComponent implements OnInit {
+export class UserNewComponent implements OnInit, OnDestroy {
 
   userId: string;
   userForm: FormGroup;
   userControls: ControlBase<string>[] = [];
+
+  subscription: Subscription;
 
   constructor(
     private userSer: UsersService,
@@ -33,9 +36,13 @@ export class UserNewComponent implements OnInit {
     this.handleOldData();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   // initialize user form
   initUserForm() {
-    this.userSer.fetchUserFormControls()
+    this.subscription = this.userSer.fetchUserFormControls()
       .subscribe({
         next: (controls) => {
           this.userForm = this.formControlSer.toFormGroup(controls);
