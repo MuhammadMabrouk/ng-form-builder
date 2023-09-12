@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
+import { FormControlService } from 'src/app/modules/form-builder/services/form-control.service';
+import { ControlBase } from 'src/app/modules/form-builder/models/control-base.model';
 
 @Component({
   selector: 'app-user-new',
@@ -12,10 +14,11 @@ export class UserNewComponent implements OnInit {
 
   userId: string;
   userForm: FormGroup;
+  userControls: ControlBase<string>[] = [];
 
   constructor(
-    private fb: FormBuilder,
     private userSer: UsersService,
+    private formControlSer: FormControlService,
     private router: Router,
     private route: ActivatedRoute,
   ) {
@@ -32,13 +35,16 @@ export class UserNewComponent implements OnInit {
 
   // initialize user form
   initUserForm() {
-    this.userForm = this.fb.group({
-      firstName: this.fb.control(null, Validators.required),
-      lastName: this.fb.control(null, Validators.required),
-      email: this.fb.control(null, [Validators.required, Validators.email]),
-      age: this.fb.control(null, Validators.required),
-      gender: this.fb.control('male', Validators.required),
-    });
+    this.userSer.fetchUserFormControls()
+      .subscribe({
+        next: (controls) => {
+          this.userForm = this.formControlSer.toFormGroup(controls);
+          this.userControls = controls;
+        },
+        error: (err) => {
+          console.log('err', err);
+        },
+      });
   }
 
   // handle old data

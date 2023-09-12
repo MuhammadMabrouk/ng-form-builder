@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { DynamicFormControlComponent } from './components/dynamic-form-control/dynamic-form-control.component';
+import { FormControlComponent } from './components/form-control/form-control.component';
 
 const components = [
-  DynamicFormComponent,
-  DynamicFormControlComponent,
+  FormControlComponent,
 ];
 
 const modules = [

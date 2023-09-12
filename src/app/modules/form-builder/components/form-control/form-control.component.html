@@ -1,0 +1,42 @@
+<div class="form-group mb-3" [formGroup]="form">
+
+  <!-- control label -->
+  <label class="form-label fw-semibold" [attr.for]="control.key">
+    {{ control.label }}
+    <span class="text-danger" *ngIf="control.required">*</span>
+  </label>
+
+  <ng-container [ngSwitch]="control.controlType">
+
+    <!-- textbox controls -->
+    <input
+      *ngSwitchCase="'textbox'"
+      class="form-control"
+      [id]="control.key"
+      [type]="control.type"
+      [formControlName]="control.key"
+    />
+
+    <!-- radio control -->
+    <div class="d-flex flex-wrap gap-3" *ngSwitchCase="'radio'">
+      <div class="form-check" *ngFor="let opt of control.options">
+        <input
+          class="form-check-input"
+          type="radio"
+          [id]="opt.key"
+          [value]="opt.key"
+          [formControlName]="control.key"
+        />
+
+        <label [attr.for]="opt.key" class="form-check-label">
+          {{ opt.value }}
+        </label>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- validation errors -->
+  <div class="alert alert-danger small px-2 py-1 mt-1 mb-0" *ngIf="isInvalid">
+    {{ control.label }} is required
+  </div>
+</div>
