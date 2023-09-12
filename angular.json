@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-test-app": {
+    "ng-form-builder": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-test-app",
+            "outputPath": "dist/ng-form-builder",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-test-app:build:production"
+              "browserTarget": "ng-form-builder:build:production"
             },
             "development": {
-              "browserTarget": "ng-test-app:build:development"
+              "browserTarget": "ng-form-builder:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-test-app:build"
+            "browserTarget": "ng-form-builder:build"
           }
         },
         "test": {
