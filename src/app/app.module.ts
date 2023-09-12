@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormBuilderModule } from './modules/form-builder/form-builder.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ const modules = [
   ReactiveFormsModule,
   HttpClientModule,
   AppRoutingModule,
+  FormBuilderModule,
   NgbModule,
 ];
 
