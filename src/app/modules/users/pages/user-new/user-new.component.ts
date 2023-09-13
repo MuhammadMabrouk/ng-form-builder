@@ -5,6 +5,7 @@ import { UsersService } from '../../services/users.service';
 import { FormControlService } from 'src/app/modules/form-builder/services/form-control.service';
 import { ControlBase } from 'src/app/modules/form-builder/models/control-base.model';
 import { Subscription } from 'rxjs';
+import { NotificationLibService } from 'notification-lib';
 
 @Component({
   selector: 'app-user-new',
@@ -24,6 +25,7 @@ export class UserNewComponent implements OnInit, OnDestroy {
     private formControlSer: FormControlService,
     private router: Router,
     private route: ActivatedRoute,
+    private notificationSer: NotificationLibService,
   ) {
     this.userId = this.route.snapshot.params['id'];
   }
@@ -88,7 +90,22 @@ export class UserNewComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res) => {
           console.log('res', res);
-          mode === 'add' && this.userForm.reset();
+
+          if (mode === 'add') {
+            this.userForm.reset();
+            this.notificationSer.addNotification({
+              type: 'success',
+              title: 'Great!',
+              description: `User '${res.firstName} ${res.lastName}' added successfully.`,
+            });
+          } else {
+            this.notificationSer.addNotification({
+              type: 'success',
+              title: 'Awesome!',
+              description: `User '${res.firstName} ${res.lastName}' updated successfully.`,
+            });
+          }
+
           this.router.navigate(['/users/']);
         },
         error: (err) => {

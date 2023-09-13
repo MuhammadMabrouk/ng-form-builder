@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotificationLibModule } from 'notification-lib';
 
 // components
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ const modules = [
   HttpClientModule,
   AppRoutingModule,
   NgbModule,
+  NotificationLibModule,
 ];
 
 @NgModule({

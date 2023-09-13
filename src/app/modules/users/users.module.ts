@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { FormBuilderModule } from '../form-builder/form-builder.module';
+import { NotificationLibModule } from 'notification-lib';
 
 // components
 import { UsersListComponent } from './pages/users-list/users-list.component';
@@ -19,6 +20,7 @@ const modules = [
   CommonModule,
   UsersRoutingModule,
   FormBuilderModule,
+  NotificationLibModule,
 ];
 
 @NgModule({
