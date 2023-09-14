@@ -22,6 +22,37 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Running as a Progressive Web App (PWA)
+To run the application as a Progressive Web App (**PWA**), follow these steps:
+
+1. Build the project by running the following command:
+
+```bash
+ng build
+```
+
+2. Install an HTTP server if you haven't already. You can use '**http-server**' as follows:
+
+```bash
+npm install -g http-server
+```
+
+3. Navigate to the '**dist/**' directory of your project:
+
+```bash
+cd dist/<project-name>
+```
+
+4. Start the HTTP server to serve your PWA:
+
+```bash
+http-server -p 8080 -c-1
+```
+
+Open your web browser and visit `http://localhost:8080/` to access the PWA version of your application.
+
+Now, your Angular application should be running as a Progressive Web App (**PWA**).
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
