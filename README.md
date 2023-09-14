@@ -40,7 +40,7 @@ npm install -g http-server
 3. Navigate to the '**dist/**' directory of your project:
 
 ```bash
-cd dist/<project-name>
+cd dist/ng-form-builder
 ```
 
 4. Start the HTTP server to serve your PWA:
