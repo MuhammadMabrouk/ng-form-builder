@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
+## Building the notification library
+
+Before running the development server, you should build the notification library. To do this, run the following command:
+
+`ng build notification-lib`
+
+This command will build the notification library, and the build artifacts will be stored in the **dist/** directory.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
