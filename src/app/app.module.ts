@@ -11,10 +11,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 // components
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 const components = [
   AppComponent,
   SidebarComponent,
+  FooterComponent,
 ];
 
 const modules = [
