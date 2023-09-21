@@ -19,11 +19,20 @@
       </li>
     </ul>
 
-    <a
-      class="btn btn-primary w-100 mt-auto"
-      [routerLink]="[user?.id, 'edit']"
-    >
-      Edit User
-    </a>
+    <div class="d-flex flex-wrap gap-2 mt-auto">
+      <a
+        class="btn btn-primary flex-grow-1"
+        [routerLink]="[user?.id, 'edit']"
+      >
+        Edit
+      </a>
+
+      <button
+        class="btn btn-danger flex-grow-1"
+        (click)="deleteUser(user!)"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </div>

@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../interfaces/user';
+import { staggerFadeUpEnter } from 'src/app/animations/fade/stagger-fade-up';
+import { deletingFade } from 'src/app/animations/deleting/deleting-fade';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss'],
+  animations: [staggerFadeUpEnter, deletingFade],
 })
 export class UsersListComponent implements OnInit {
 
@@ -44,5 +47,11 @@ export class UsersListComponent implements OnInit {
           console.log(err);
         },
       });
+  }
+
+  // delete user
+  deleteUser(deletedUser: User) {
+    this.users = this.users.filter(user => user.id !== deletedUser.id);
+    this.usersLimit = this.users.length;
   }
 }

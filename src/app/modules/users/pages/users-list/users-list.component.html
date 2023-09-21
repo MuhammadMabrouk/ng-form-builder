@@ -11,9 +11,16 @@
 </div>
 
 <!-- page content -->
-<div class="row" *ngIf="users.length > 0 && !isFetching">
-  <div class="col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let user of users">
-    <app-user-card [user]="user"></app-user-card>
+<div class="row" *ngIf="users.length > 0 && !isFetching" @staggerFadeUpEnter>
+  <div
+    *ngFor="let user of users"
+    class="col-md-6 col-lg-4 col-xl-3 mb-4 staggerFadeUp"
+    @deletingFade
+  >
+    <app-user-card
+      [user]="user"
+      (userDeleted)="deleteUser($event)"
+    ></app-user-card>
   </div>
 </div>
 

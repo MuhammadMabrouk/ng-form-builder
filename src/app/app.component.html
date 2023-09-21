@@ -3,7 +3,9 @@
 
   <div class="d-flex flex-column min-vh-100">
     <div class="flex-grow-1 p-4">
-      <router-outlet></router-outlet>
+      <div [@routingFadeInUp]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
     </div>
 
     <app-footer></app-footer>

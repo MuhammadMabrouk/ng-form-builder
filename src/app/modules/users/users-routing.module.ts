@@ -5,13 +5,25 @@ import { UsersListComponent } from './pages/users-list/users-list.component';
 import { UserNewComponent } from './pages/user-new/user-new.component';
 
 const routes: Routes = [
-  { path: '', component: UsersListComponent },
-  { path: 'new', component: UserNewComponent },
-  { path: ':id/edit', component: UserNewComponent },
+  {
+    path: '',
+    component: UsersListComponent,
+    data: { animation: 'AllUsersPage' },
+  },
+  {
+    path: 'new',
+    component: UserNewComponent,
+    data: { animation: 'NewUserPage' },
+  },
+  {
+    path: ':id/edit',
+    component: UserNewComponent,
+    data: { animation: 'EditUserPage' },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UsersRoutingModule { }
+export class UsersRoutingModule {}

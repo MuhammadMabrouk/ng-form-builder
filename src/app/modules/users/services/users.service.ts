@@ -46,6 +46,11 @@ export class UsersService {
     return this.http[requestMethod]<User>(requestUrl, user);
   }
 
+  // delete user
+  deleteUser(id: string) {
+    return this.http.delete<User>(`https://dummyjson.com/users/${id}`);
+  }
+
   // fetch user form controls
   fetchUserFormControls() {
     const controls: ControlBase<string>[] = [
