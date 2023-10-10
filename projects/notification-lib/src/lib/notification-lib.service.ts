@@ -12,14 +12,10 @@ export class NotificationLibService {
   constructor() { }
 
   addNotification(notification: Notification) {
-    const notifications = this.notifications.value;
-    notifications.push(notification);
-    this.notifications.next(notifications);
+    notification && this.notifications.next([...this.notifications.value, notification]);
   }
 
   removeNotification(index: number) {
-    const notifications = this.notifications.value;
-    notifications.splice(index, 1);
-    this.notifications.next(notifications);
+    index && this.notifications.next(this.notifications.value.splice(index, 1));
   }
 }

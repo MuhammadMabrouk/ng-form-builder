@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ControlBase } from '../models/control-base.model';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class FormControlService {
   constructor(private fb: FormBuilder) {}
 
   toFormGroup(controls: ControlBase<string>[]) {
-    const group: any = {};
+    const group: {[key: string]: FormControl} = {};
 
     controls.forEach((control) => {
       group[control.key] = control.required

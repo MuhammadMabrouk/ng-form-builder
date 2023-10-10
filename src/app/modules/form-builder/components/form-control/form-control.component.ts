@@ -14,6 +14,6 @@ export class FormControlComponent {
 
   get isInvalid() {
     const control = this.form.controls[this.control.key];
-    return control.invalid && control.touched;
+    return control.touched && control.invalid;
   }
 }
