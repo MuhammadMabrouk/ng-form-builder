@@ -98,14 +98,14 @@ export class UserNewComponent implements OnInit, OnDestroy {
             this.userForm.reset();
             this.notificationSer.addNotification({
               type: 'success',
-              title: 'Great!',
-              description: `User '${res.firstName} ${res.lastName}' added successfully.`,
+              title: $localize`Great!`,
+              description: $localize`User '${res.firstName} ${res.lastName}' added successfully.`,
             });
           } else {
             this.notificationSer.addNotification({
               type: 'success',
-              title: 'Awesome!',
-              description: `User '${res.firstName} ${res.lastName}' updated successfully.`,
+              title: $localize`Awesome!`,
+              description: $localize`User '${res.firstName} ${res.lastName}' updated successfully.`,
             });
           }
 

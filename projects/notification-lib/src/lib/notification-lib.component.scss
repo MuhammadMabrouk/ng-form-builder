@@ -1,0 +1,10 @@
+.notification {
+  &-title {
+    margin-inline-end: auto;
+  }
+
+  &-close {
+    margin-inline-start: 1rem;
+    margin-inline-end: 0;
+  }
+}

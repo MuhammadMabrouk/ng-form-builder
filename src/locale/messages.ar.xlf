@@ -367,6 +367,38 @@
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6899344040225872362" datatype="html">
+        <source>Great!</source>
+        <target>عظيم!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/users/pages/user-new/user-new.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2307462228302515593" datatype="html">
+        <source>User &apos;<x id="PH" equiv-text="res.firstName"/> <x id="PH_1" equiv-text="res.lastName"/>&apos; added successfully.</source>
+        <target>المستخدم &apos;<x id="PH" equiv-text="res.firstName"/> <x id="PH_1" equiv-text="res.lastName"/>&apos; تمت إضافته بنجاح.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/users/pages/user-new/user-new.component.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5096908874639930974" datatype="html">
+        <source>Awesome!</source>
+        <target>رائع!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/users/pages/user-new/user-new.component.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9070441199146638746" datatype="html">
+        <source>User &apos;<x id="PH" equiv-text="res.firstName"/> <x id="PH_1" equiv-text="res.lastName"/>&apos; updated successfully.</source>
+        <target>المستخدم &apos;<x id="PH" equiv-text="res.firstName"/> <x id="PH_1" equiv-text="res.lastName"/>&apos; تم تحديثه بنجاح.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/users/pages/user-new/user-new.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4555457172864212828" datatype="html">
         <source>Users</source>
         <target>المستخدمين</target>
