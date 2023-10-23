@@ -6,15 +6,15 @@
 
     <ul>
       <li>
-        <strong class="fw-semibold">Email:</strong>
+        <strong class="fw-semibold" i18n>Email:</strong>
         {{ user?.email }}
       </li>
       <li>
-        <strong class="fw-semibold">Age:</strong>
+        <strong class="fw-semibold" i18n>Age:</strong>
         {{ user?.age }}
       </li>
       <li>
-        <strong class="fw-semibold">Gender:</strong>
+        <strong class="fw-semibold" i18n>Gender:</strong>
         {{ user?.gender }}
       </li>
     </ul>
@@ -23,6 +23,7 @@
       <a
         class="btn btn-primary flex-grow-1"
         [routerLink]="[user?.id, 'edit']"
+        i18n
       >
         Edit
       </a>
@@ -30,6 +31,7 @@
       <button
         class="btn btn-danger flex-grow-1"
         (click)="deleteUser(user!)"
+        i18n
       >
         Delete
       </button>

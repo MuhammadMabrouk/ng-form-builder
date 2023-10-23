@@ -1,8 +1,19 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 280px;
   height: 100%;
   overflow-y: auto;
+
+  :host-context(html[dir="ltr"]) & {
+    left: 0;
+  }
+
+  :host-context(html[dir="rtl"]) & {
+    right: 0;
+  }
+
+  .nav {
+    padding-inline-start: 0;
+  }
 }

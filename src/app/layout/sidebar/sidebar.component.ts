@@ -6,28 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  brandLogo = 'Brand Logo';
+  brandLogo = $localize`Brand Logo`;
 
   menuItems = [
     {
-      name: 'Users List',
+      name: $localize`Users List`,
       route: 'users',
       exact: false,
     },
     {
-      name: 'List Item',
+      name: $localize`List Item`,
       route: '',
       exact: true,
     },
     {
-      name: 'List Item',
+      name: $localize`List Item`,
       route: '',
       exact: true,
     },
     {
-      name: 'List Item',
+      name: $localize`List Item`,
       route: '',
       exact: true,
     },
+  ];
+
+  localesList = [
+    { code: 'en-US', label: 'English' },
+    { code: 'ar', label: 'العربية' }
   ];
 }

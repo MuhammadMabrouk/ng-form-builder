@@ -1,5 +1,5 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
-  <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+  <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 text-white text-decoration-none">
     <span class="fs-4 fw-semibold">{{ brandLogo }}</span>
   </a>
   <hr>
@@ -13,6 +13,15 @@
         [routerLinkActiveOptions]="{ exact: item.exact }"
       >
         {{ item.name }}
+      </a>
+    </li>
+  </ul>
+
+  <hr>
+  <ul>
+    <li *ngFor="let locale of localesList">
+      <a class="text-light" href="/{{ locale.code }}/">
+        {{ locale.label }}
       </a>
     </li>
   </ul>

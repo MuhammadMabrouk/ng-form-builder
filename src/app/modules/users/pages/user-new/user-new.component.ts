@@ -14,6 +14,7 @@ import { NotificationLibService } from 'notification-lib';
 })
 export class UserNewComponent implements OnInit, OnDestroy {
 
+  mainTitle: string;
   userId: string;
   userForm: FormGroup;
   userControls: ControlBase<string>[] = [];
@@ -31,6 +32,8 @@ export class UserNewComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.mainTitle = !!this.userId ? $localize`Edit User` : $localize`Add New User`;
+
     // initialize user form
     this.initUserForm();
 

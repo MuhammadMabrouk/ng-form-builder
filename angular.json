@@ -13,6 +13,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ar": "src/locale/messages.ar.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -20,6 +26,8 @@
             "outputPath": "dist/ng-form-builder",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "localize": ["ar"],
+            "i18nMissingTranslation": "error",
             "polyfills": [
               "zone.js"
             ],
@@ -60,6 +68,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "ar": {
+              "localize": ["ar"]
             }
           },
           "defaultConfiguration": "production"
@@ -72,6 +83,9 @@
             },
             "development": {
               "browserTarget": "ng-form-builder:build:development"
+            },
+            "ar": {
+              "browserTarget": "ng-form-builder:build:development,ar"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +93,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-form-builder:build"
+            "browserTarget": "ng-form-builder:build",
+            "format": "xlf",
+            "outputPath": "src/locale"
           }
         },
         "test": {
